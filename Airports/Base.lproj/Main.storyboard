@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Epv-xb-BE8">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Airports-->
+        <scene sceneID="LxC-Bi-wNb">
+            <objects>
+                <tableViewController id="Jgn-W4-Vka" customClass="AirportsTableViewController" customModule="Airports" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ZE1-UN-wUb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <activityIndicatorView key="tableFooterView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" id="2mm-wK-RN7">
+                            <rect key="frame" x="0.0" y="72" width="375" height="20"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </activityIndicatorView>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="AirportCell" textLabel="aVf-u2-jZv" detailTextLabel="FQd-6N-mbe" style="IBUITableViewCellStyleSubtitle" id="mQ9-rO-dG9">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mQ9-rO-dG9" id="Qj0-UT-0Zz">
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aVf-u2-jZv">
+                                            <rect key="frame" x="15" y="4" width="34" height="21"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FQd-6N-mbe">
+                                            <rect key="frame" x="15" y="25" width="44" height="15"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Jgn-W4-Vka" id="UQ2-7f-Zos"/>
+                            <outlet property="delegate" destination="Jgn-W4-Vka" id="cdP-NP-ncF"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Airports" id="sYK-va-eQh"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="2mm-wK-RN7" id="yiW-tV-Hal"/>
+                        <segue destination="sO8-bo-hvo" kind="show" identifier="ShowAirportDetails" id="FEn-gk-ma6"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jJk-os-cpm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1092" y="150.67466266866569"/>
+        </scene>
+        <!--Airport Description-->
+        <scene sceneID="tPw-iX-Rt1">
+            <objects>
+                <viewController id="sO8-bo-hvo" customClass="AirportDetailedViewController" customModule="Airports" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Noj-yU-BtV"/>
+                        <viewControllerLayoutGuide type="bottom" id="tcv-pL-pBk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GZu-0o-nke">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currency" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xGO-kK-lp7">
+                                <rect key="frame" x="16" y="72" width="90" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="5wA-1d-naI"/>
+                                    <constraint firstAttribute="width" constant="90" id="PTQ-CQ-urw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0kd-5X-V5H">
+                                <rect key="frame" x="114" y="72" width="245" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="hbf-Lv-rRe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timezone" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2kh-kY-c31">
+                                <rect key="frame" x="16" y="104" width="87" height="24"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="joX-e4-qJ2">
+                                <rect key="frame" x="114" y="104" width="245" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="dnM-QH-vsr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="awy-eM-SPu">
+                                <rect key="frame" x="16" y="619" width="343" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="h51-Rg-SLZ"/>
+                                </constraints>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButtonTapped:" destination="sO8-bo-hvo" eventType="touchUpInside" id="PP1-D3-u8H"/>
+                                </connections>
+                            </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Lg2-Te-uDC">
+                                <rect key="frame" x="16" y="136" width="343" height="475"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Lg2-Te-uDC" firstAttribute="trailing" secondItem="GZu-0o-nke" secondAttribute="trailingMargin" id="4rQ-JR-uXz"/>
+                            <constraint firstItem="xGO-kK-lp7" firstAttribute="top" secondItem="Noj-yU-BtV" secondAttribute="bottom" constant="8" id="Cxv-6T-Qwx"/>
+                            <constraint firstItem="awy-eM-SPu" firstAttribute="trailing" secondItem="GZu-0o-nke" secondAttribute="trailingMargin" id="EXJ-LM-FXE"/>
+                            <constraint firstItem="joX-e4-qJ2" firstAttribute="centerY" secondItem="2kh-kY-c31" secondAttribute="centerY" id="Ead-0v-czd"/>
+                            <constraint firstItem="tcv-pL-pBk" firstAttribute="top" secondItem="awy-eM-SPu" secondAttribute="bottom" constant="8" id="KbH-0A-ew2"/>
+                            <constraint firstItem="Lg2-Te-uDC" firstAttribute="leading" secondItem="GZu-0o-nke" secondAttribute="leadingMargin" id="QTC-mI-D7g"/>
+                            <constraint firstItem="xGO-kK-lp7" firstAttribute="leading" secondItem="GZu-0o-nke" secondAttribute="leadingMargin" id="W4O-xP-W0f"/>
+                            <constraint firstItem="0kd-5X-V5H" firstAttribute="trailing" secondItem="GZu-0o-nke" secondAttribute="trailingMargin" id="XeL-89-rsh"/>
+                            <constraint firstItem="joX-e4-qJ2" firstAttribute="trailing" secondItem="GZu-0o-nke" secondAttribute="trailingMargin" id="Y3F-7S-uVl"/>
+                            <constraint firstItem="awy-eM-SPu" firstAttribute="centerX" secondItem="GZu-0o-nke" secondAttribute="centerX" id="YvV-z5-IJM"/>
+                            <constraint firstItem="awy-eM-SPu" firstAttribute="leading" secondItem="GZu-0o-nke" secondAttribute="leadingMargin" id="aun-DV-xjR"/>
+                            <constraint firstItem="0kd-5X-V5H" firstAttribute="centerY" secondItem="xGO-kK-lp7" secondAttribute="centerY" id="gjc-aa-HqD"/>
+                            <constraint firstItem="0kd-5X-V5H" firstAttribute="leading" secondItem="xGO-kK-lp7" secondAttribute="trailing" constant="8" id="iKt-tW-ieo"/>
+                            <constraint firstItem="2kh-kY-c31" firstAttribute="leading" secondItem="xGO-kK-lp7" secondAttribute="leading" id="lCR-VF-0xp"/>
+                            <constraint firstItem="awy-eM-SPu" firstAttribute="top" secondItem="Lg2-Te-uDC" secondAttribute="bottom" constant="8" id="mIv-5Z-HFd"/>
+                            <constraint firstItem="2kh-kY-c31" firstAttribute="top" secondItem="xGO-kK-lp7" secondAttribute="bottom" constant="8" id="p6C-HY-813"/>
+                            <constraint firstItem="joX-e4-qJ2" firstAttribute="leading" secondItem="0kd-5X-V5H" secondAttribute="leading" id="tso-lt-I2X"/>
+                            <constraint firstItem="Lg2-Te-uDC" firstAttribute="top" secondItem="joX-e4-qJ2" secondAttribute="bottom" constant="8" id="zo5-po-wNa"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Airport Description" id="LXg-uj-NI0"/>
+                    <connections>
+                        <outlet property="currencyCodeLabel" destination="0kd-5X-V5H" id="Uru-zK-0xb"/>
+                        <outlet property="map" destination="Lg2-Te-uDC" id="DyE-gm-Hn6"/>
+                        <outlet property="timezoneLabel" destination="joX-e4-qJ2" id="f3k-SM-NND"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jOx-tr-Zwa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2040.8" y="150.67466266866569"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="rNb-wb-sMD">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Epv-xb-BE8" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="NPU-sZ-RUY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Jgn-W4-Vka" kind="relationship" relationship="rootViewController" id="y8h-Ht-nMa"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dfT-D7-5K5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="152.80000000000001" y="150.67466266866569"/>
+        </scene>
+    </scenes>
+</document>
